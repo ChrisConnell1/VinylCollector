@@ -1,0 +1,29 @@
+﻿@model IEnumerable<VinylCollector.Models.Vinyl.Album>
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="card-deck" style="display:inline-flex">
+    @foreach (var item in Model)
+    {
+    <div class="card">
+        <img class="card-img-top" src="@item.ImageURL" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@item.Title</h5>
+            <p class="card-text">More info</p>
+        </div>
+    </div>
+            @*@Html.ActionLink("") NEED THIS TO LINK TO AN ALBUM VIEW BASED ON ALBUM.ID Maybe a modal based on a Shared partial? *@
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Home", "Index", "Home")
+</div>

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Vinyl Collection";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <h1>Vinyl Collection</h1>
+    <p class="lead">This is an MVC application that documents my ever growing vinyl collection. Browse, search, or using a call to Discog's API, get lots of deatils about any of the listed albums.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+            <a class = "btn btn-default" onclick="@("window.location.href='" + @Url.Action("Index", "Albums") + "'");">Browse</a>
+    </div>
+    <div class="col-md-4">
+        <p><a class="btn btn-default" onclick="@("window.location.href='" + @Url.Action("actionName", "controllerName") + "'");">Random</a></p>
+    </div>
+    <div class="col-md-4">
+        <input type="text" placeholder="Search..."/>
+        <a class="btn btn-default" href="#">Go</a>
+    </div>
+</div>
