@@ -18,7 +18,9 @@ namespace VinylCollector.Controllers
         // GET: Albums
         public ActionResult Index()
         {
-            return View(db.Albums.ToList());
+            var albums = db.Albums.Include(c => c.Track).ToList();
+
+            return View(albums);
         }
 
         // GET: Albums/Details/5

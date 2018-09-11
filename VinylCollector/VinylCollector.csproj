@@ -232,6 +232,10 @@
     <Compile Include="Migrations\Vinyl\201808202149100_dbGeneratedOption.Identity.Designer.cs">
       <DependentUpon>201808202149100_dbGeneratedOption.Identity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Vinyl\201809110431428_AddTrackNavigationPropToAlbum.cs" />
+    <Compile Include="Migrations\Vinyl\201809110431428_AddTrackNavigationPropToAlbum.Designer.cs">
+      <DependentUpon>201809110431428_AddTrackNavigationPropToAlbum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Vinyl\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -316,6 +320,8 @@
     <Content Include="Views\Tracks\Details.cshtml" />
     <Content Include="Views\Tracks\Edit.cshtml" />
     <Content Include="Views\Tracks\Index.cshtml" />
+    <Content Include="Views\Shared\_AlbumDetails.cshtml" />
+    <Content Include="ViewModels\AlbumViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Vinyl\201808202149100_dbGeneratedOption.Identity.resx">
       <DependentUpon>201808202149100_dbGeneratedOption.Identity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809110431428_AddTrackNavigationPropToAlbum.resx">
+      <DependentUpon>201809110431428_AddTrackNavigationPropToAlbum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,6 +25,8 @@ namespace VinylCollector.Models.Vinyl
 
         public virtual ICollection<Track> TrackList { get; set; }
 
+        public Track Track { get; set; }
+
         public string ImageURL { get; set; }
 
         public double Price { get; set; }

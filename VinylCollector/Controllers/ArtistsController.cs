@@ -18,7 +18,8 @@ namespace VinylCollector.Controllers
         // GET: Artists
         public ActionResult Index()
         {
-            return View(db.Artists.ToList());
+            var artists = db.Artists.Include(c => c.Albums).ToList();
+            return View(artists);
         }
 
         // GET: Artists/Details/5

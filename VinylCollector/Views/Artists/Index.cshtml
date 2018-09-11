@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<VinylCollector.Models.Vinyl.Artist>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Artist";
 }
 
-<h2>Index</h2>
+<h2>Artists</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -18,7 +18,7 @@
             @Html.DisplayNameFor(model => model.Genre)
         </th>
         <th>
-            <!-- Want to display "Albums" here... and underneathe a list of their albums-->
+            Albums
         </th>
     </tr>
 
@@ -31,7 +31,14 @@
             @Html.DisplayFor(modelItem => item.Genre)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Albums)
         </td>
+        @foreach (var i in item.Albums)
+        {
+            <td>
+                @i.Title
+            </td>
+        }
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ArtistId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ArtistId }) |

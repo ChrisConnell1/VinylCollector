@@ -21,14 +21,14 @@ namespace VinylCollector.Migrations.Vinyl
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            context.Artists.AddOrUpdate(
-                a => a.Name, DummyData.getArtists().ToArray());
+            //context.Artists.AddOrUpdate(
+            //    a => a.Name, DummyData.getArtists().ToArray());
 
-            context.Albums.AddOrUpdate(
-                b => b.Title, DummyData.getAlbums(context).ToArray());
+            //context.Albums.AddOrUpdate(
+            //    b => b.Title, DummyData.getAlbums(context).ToArray());
 
-            context.Tracks.AddOrUpdate(
-                c => c.Title, DummyData.getTracks(context).ToArray());
+            //context.Tracks.AddOrUpdate(
+            //    c => c.Title, DummyData.getTracks(context).ToArray());
 
             context.SaveChanges();
         }

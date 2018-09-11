@@ -127,3 +127,4 @@ C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollect
 C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.return_ArtistId.resources
 C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.change_config.resources
 C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.dbGeneratedOptionIdentity.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.AddTrackNavigationPropToAlbum.resources
