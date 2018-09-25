@@ -1,0 +1,40 @@
+﻿@model VinylCollector.ViewModels.AlbumFormViewModel
+@{
+    var title = (Model.Album == null ? "New Album" : "Edit Album");
+    ViewBag.Title = title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@title</h2>
+
+@using (Html.BeginForm("Save", "Albums"))
+{
+    <div class="form-group">
+        @Html.LabelFor(a => a.Album.Title)
+        @Html.TextBoxFor(a => a.Album.Title)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Album.ArtistId)
+        @Html.DropDownListFor(a => a.Album.ArtistId, new SelectList(Model.Artist, "ArtistId", "Name"), "Select Artist", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Album.Year)
+        @Html.TextBoxFor(a => a.Album.Year)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Album.TypeOfAlbumId)
+        @Html.DropDownListFor(a => a.Album.TypeOfAlbumId, new SelectList(Model.TypeOfAlbum, "Id", "Name"), "Select Album Type", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Album.Price)
+        @Html.TextBoxFor(a => a.Album.Price)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.Album.ImageURL)
+        @Html.TextBoxFor(a => a.Album.ImageURL)
+    </div>
+    @Html.HiddenFor(a => a.Album.AlbumId)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+

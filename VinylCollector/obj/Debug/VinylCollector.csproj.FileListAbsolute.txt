@@ -128,3 +128,10 @@ C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollect
 C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.change_config.resources
 C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.dbGeneratedOptionIdentity.resources
 C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.AddTrackNavigationPropToAlbum.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.CreateGenreModel.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.MakeGenreIdNullable.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.UpdateGenreIdForArtists.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.RemoveNullableFK.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.RemoveNullableIdsFromTrack.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.CreateTypeOfAlbumModel.resources
+C:\Users\conne\source\repos\VinylCollector\VinylCollector\obj\Debug\VinylCollector.Migrations.Vinyl.PopulateTypeOfAlbum.resources

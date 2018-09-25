@@ -2,49 +2,49 @@
 
 @{
     ViewBag.Title = "Artist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h2>Artists</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+@Html.ActionLink("Add Artist", "New", "Artists", null, new { @class = "btn btn-primary" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            Albums
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Albums)
-        </td>
-        @foreach (var i in item.Albums)
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
         {
-            <td>
-                @i.Title
-            </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @item.Genre.Name
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Albums)
+                    </td>
+                    @foreach (var i in item.Albums)
+                    {
+                        <td>
+                            @i.Title
+                        </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ArtistId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ArtistId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ArtistId })
+                </td>
+            </tr>
         }
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArtistId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistId })
-        </td>
-    </tr>
-}
-
+    </tbody>
 </table>

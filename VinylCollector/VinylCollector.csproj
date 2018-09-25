@@ -236,15 +236,47 @@
     <Compile Include="Migrations\Vinyl\201809110431428_AddTrackNavigationPropToAlbum.Designer.cs">
       <DependentUpon>201809110431428_AddTrackNavigationPropToAlbum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Vinyl\201809171933203_CreateGenreModel.cs" />
+    <Compile Include="Migrations\Vinyl\201809171933203_CreateGenreModel.Designer.cs">
+      <DependentUpon>201809171933203_CreateGenreModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Vinyl\201809172049165_MakeGenreIdNullable.cs" />
+    <Compile Include="Migrations\Vinyl\201809172049165_MakeGenreIdNullable.Designer.cs">
+      <DependentUpon>201809172049165_MakeGenreIdNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Vinyl\201809172102566_UpdateGenreIdForArtists.cs" />
+    <Compile Include="Migrations\Vinyl\201809172102566_UpdateGenreIdForArtists.Designer.cs">
+      <DependentUpon>201809172102566_UpdateGenreIdForArtists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Vinyl\201809172105158_RemoveNullableFK.cs" />
+    <Compile Include="Migrations\Vinyl\201809172105158_RemoveNullableFK.Designer.cs">
+      <DependentUpon>201809172105158_RemoveNullableFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Vinyl\201809190334165_RemoveNullableIdsFromTrack.cs" />
+    <Compile Include="Migrations\Vinyl\201809190334165_RemoveNullableIdsFromTrack.Designer.cs">
+      <DependentUpon>201809190334165_RemoveNullableIdsFromTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Vinyl\201809190400461_CreateTypeOfAlbumModel.cs" />
+    <Compile Include="Migrations\Vinyl\201809190400461_CreateTypeOfAlbumModel.Designer.cs">
+      <DependentUpon>201809190400461_CreateTypeOfAlbumModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Vinyl\201809190403582_PopulateTypeOfAlbum.cs" />
+    <Compile Include="Migrations\Vinyl\201809190403582_PopulateTypeOfAlbum.Designer.cs">
+      <DependentUpon>201809190403582_PopulateTypeOfAlbum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Vinyl\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Vinyl\Album.cs" />
     <Compile Include="Models\Vinyl\Artist.cs" />
+    <Compile Include="Models\Vinyl\Genre.cs" />
     <Compile Include="Models\Vinyl\Track.cs" />
+    <Compile Include="Models\Vinyl\TypeOfAlbum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AlbumFormViewModel.cs" />
+    <Compile Include="ViewModels\ArtistFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -321,7 +353,8 @@
     <Content Include="Views\Tracks\Edit.cshtml" />
     <Content Include="Views\Tracks\Index.cshtml" />
     <Content Include="Views\Shared\_AlbumDetails.cshtml" />
-    <Content Include="ViewModels\AlbumViewModel.cshtml" />
+    <Content Include="Views\Artists\ArtistForm.cshtml" />
+    <Content Include="Views\Albums\AlbumForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -366,6 +399,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Vinyl\201809110431428_AddTrackNavigationPropToAlbum.resx">
       <DependentUpon>201809110431428_AddTrackNavigationPropToAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809171933203_CreateGenreModel.resx">
+      <DependentUpon>201809171933203_CreateGenreModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809172049165_MakeGenreIdNullable.resx">
+      <DependentUpon>201809172049165_MakeGenreIdNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809172102566_UpdateGenreIdForArtists.resx">
+      <DependentUpon>201809172102566_UpdateGenreIdForArtists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809172105158_RemoveNullableFK.resx">
+      <DependentUpon>201809172105158_RemoveNullableFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809190334165_RemoveNullableIdsFromTrack.resx">
+      <DependentUpon>201809190334165_RemoveNullableIdsFromTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809190400461_CreateTypeOfAlbumModel.resx">
+      <DependentUpon>201809190400461_CreateTypeOfAlbumModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Vinyl\201809190403582_PopulateTypeOfAlbum.resx">
+      <DependentUpon>201809190403582_PopulateTypeOfAlbum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

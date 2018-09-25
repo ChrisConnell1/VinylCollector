@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using VinylCollector.Data;
 using VinylCollector.Models.Vinyl;
+using VinylCollector.ViewModels;
 
 namespace VinylCollector.Controllers
 {
@@ -18,7 +19,7 @@ namespace VinylCollector.Controllers
         // GET: Artists
         public ActionResult Index()
         {
-            var artists = db.Artists.Include(c => c.Albums).ToList();
+            var artists = db.Artists.Include(c => c.Genre).ToList();
             return View(artists);
         }
 
@@ -29,7 +30,7 @@ namespace VinylCollector.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Artist artist = db.Artists.Find(id);
+            var artist = db.Artists.Include(a => a.Genre).SingleOrDefault(a => a.ArtistId == id);
             if (artist == null)
             {
                 return HttpNotFound();
@@ -60,19 +61,56 @@ namespace VinylCollector.Controllers
             return View(artist);
         }
 
-        // GET: Artists/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult New()
         {
-            if (id == null)
+            var genres = db.Genres.ToList();
+            var viewModel = new ArtistFormViewModel
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Artist artist = db.Artists.Find(id);
+                Genres = genres
+            };
+
+            return View("ArtistForm", viewModel);
+        }
+
+        // GET: Artists/Edit/5
+        public ActionResult Edit(int id)
+        {
+            var artist = db.Artists.Include(a => a.Genre).SingleOrDefault(a => a.ArtistId == id);
+
             if (artist == null)
             {
                 return HttpNotFound();
             }
-            return View(artist);
+
+            var viewModel = new ArtistFormViewModel
+            {
+                Artist = artist,
+                Genres = db.Genres.ToList()
+            };
+            
+            return View("ArtistForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Artist artist)
+        {
+
+            if (artist.ArtistId == 0)
+            {
+                db.Artists.Add(artist);
+            }
+
+            else
+            {
+                var artistInDb = db.Artists.Single(c => c.ArtistId == artist.ArtistId);
+
+                artistInDb.Name = artist.Name;
+                artistInDb.GenreId = artist.GenreId;
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Artists");
+
         }
 
         // POST: Artists/Edit/5
@@ -98,7 +136,8 @@ namespace VinylCollector.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Artist artist = db.Artists.Find(id);
+            var artist = db.Artists.Include(a => a.Genre).SingleOrDefault(i => i.ArtistId == id);
+
             if (artist == null)
             {
                 return HttpNotFound();

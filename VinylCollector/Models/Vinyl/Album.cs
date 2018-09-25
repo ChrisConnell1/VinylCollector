@@ -15,13 +15,15 @@ namespace VinylCollector.Models.Vinyl
         public string Title { get; set; }
 
         //[ForeignKey("Artist")]
-        public int? ArtistId { get; set; }
+        public int ArtistId { get; set; }
 
         public virtual Artist Artist { get; set; }
 
         public int Year { get; set; }
 
-        public string Type { get; set; }
+        public TypeOfAlbum Type { get; set; }
+
+        public int TypeOfAlbumId { get; set; }
 
         public virtual ICollection<Track> TrackList { get; set; }
 

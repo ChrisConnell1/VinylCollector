@@ -2,12 +2,14 @@
 
 @{
     ViewBag.Title = "Browse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h2>Browse</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "New")
 </p>
 
 <div class="card-deck" style="display:inline-flex">
@@ -20,6 +22,10 @@
             <p class="card-text">@item.Artist.Name</p>
         </div>
     </div>
+
+        @*<img src="@item.ImageURL" alt ="" class="rounded float-left" />
+        <p>@Html.ActionLink(item.Title, "Details", "Albums", new { @id = item.AlbumId}, null)</p>
+        <p>@item.Artist.Name</p>*@
     }
 </div>
 

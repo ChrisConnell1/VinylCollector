@@ -13,14 +13,13 @@ namespace VinylCollector.Models.Vinyl
         public int TrackID { get; set; }
         public string Title { get; set; }
 
-        //I believe what I need here, is ArtistId, and AlbumId, which are foreign keys to those tables. This would link a track to both an artist and an album by ID.
         //[ForeignKey ("Artist")]
         public virtual Artist Artist { get; set; }
-        public int? ArtistId { get; set; }
+        public int ArtistId { get; set; }
 
         //[ForeignKey("Album")]
         public virtual Album Album  { get; set; }
-        public int? AlbumId { get; set; }
+        public int AlbumId { get; set; }
         public bool IsSingle { get; set; }
         public string Length { get; set; }
     }
